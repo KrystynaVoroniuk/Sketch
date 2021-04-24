@@ -24,7 +24,7 @@ class ImageUpload extends Component {
     data.append("picture", files[0]);
     axios({
       method: "post",
-      url: "https://imagetosketch.herokuapp.com/api/sketch/",
+      url: "http://localhost:8000/api/sketch/",
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -54,7 +54,7 @@ class ImageUpload extends Component {
             buttonText="Choose image"
             onChange={this.onDrop}
             imgExtension={[".jpg", ".gif", ".png", ".gif"]}
-            maxFileSize={5242880}
+            maxFileSize={10485760}
           />
           <ShowImages
             original={this.state.picture}
